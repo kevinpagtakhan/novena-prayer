@@ -1,0 +1,83 @@
+h1 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.prayer-group {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.prayer-set {
+    display: flex;
+}
+
+.prayer-label-all,
+.prayer-body-all {
+    font-weight: 700;
+}
+
+.prayer-set {
+    padding-top: 15px;
+}
+
+.prayer-label {
+    min-width: 100px;
+}
+
+.prayer-label:after {
+    content: ":"
+}
+
+.prayer-body {
+    text-align: justify;
+}
+
+.prayer-group-divider {
+    width: 10px;
+    border: 1px black solid;
+}
+
+.prayer-line {
+    display: flex;
+    padding: 10px
+}
+
+.prayer-line-leader {
+    width: 50%;
+}
+
+.prayer-line-response {
+    width: 50%;
+    font-weight: 700;
+}
+
+.prayer-set {
+    cursor: default;
+}
+
+.bible-verse:not(:first-child):before {
+    content: " "
+}
+
+.bible-verse:not(:first-child):after {
+    content: " "
+}
+
+.prayer-set-all:not(:last-child) {
+    padding-bottom: 20px;
+}
+
+.bible-into {
+    padding-bottom: 10px;
+}
+
+.bible-verse {
+    border-left: 2px solid #999;
+    padding: 10px 10px 10px 20px;
+    font-style: italic;
+}

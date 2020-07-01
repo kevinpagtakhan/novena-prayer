@@ -1,0 +1,26 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run builder
+      run: |
+        git remote add github "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+        git pull github ${GITHUB_REF} --ff-only
+        npm ci
+        npm run build
+        git config --global user.name "${CONTRIBUTOR_NAME}"
+        git config --global user.email "${CONTRIBUTOR_EMAIL}"
+        git add docs/
+        git commit -m "Generated build files" && git push github HEAD:${GITHUB_REF} || echo "DONE"
